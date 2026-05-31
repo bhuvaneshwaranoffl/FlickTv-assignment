@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:flicktv_bhuvaneshwaran/core/constants/animation_timings.dart';
 import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
 import 'package:flicktv_bhuvaneshwaran/core/theme/app_text_styles.dart';
 
@@ -13,6 +14,7 @@ class BlinkitMoneyFooter extends StatelessWidget {
     required this.footerHeadline,
     required this.onAddMoneyPressed,
     required this.onClaimGiftCardPressed,
+    required this.animation,
   });
 
   final String addMoneyLabel;
@@ -21,40 +23,57 @@ class BlinkitMoneyFooter extends StatelessWidget {
   final String footerHeadline;
   final VoidCallback onAddMoneyPressed;
   final VoidCallback onClaimGiftCardPressed;
+  final Animation<double> animation;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        SizedBox(
-          width: double.infinity,
-          height: 52,
-          child: ElevatedButton(
-            onPressed: onAddMoneyPressed,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primaryGreen,
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+    final footerAnimation = CurvedAnimation(
+      parent: animation,
+      curve: AnimationTimings.footerFadeIn,
+    );
+    
+    final slideAnimation = Tween<Offset>(
+      begin: const Offset(0.0, 0.5), 
+      end: Offset.zero,
+    ).animate(footerAnimation);
+
+    return SlideTransition(
+      position: slideAnimation,
+      child: FadeTransition(
+        opacity: footerAnimation,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              height: 52,
+              child: ElevatedButton(
+                onPressed: onAddMoneyPressed,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.primaryGreen,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(addMoneyLabel, style: AppTextStyles.primaryButton),
               ),
             ),
-            child: Text(addMoneyLabel, style: AppTextStyles.primaryButton),
-          ),
+            const SizedBox(height: 24),
+            _ClaimGiftCardRow(
+              title: giftCardTitle,
+              subtitle: giftCardSubtitle,
+              onTap: onClaimGiftCardPressed,
+            ),
+            const SizedBox(height: 32),
+            Text(
+              footerHeadline,
+              textAlign: TextAlign.center,
+              style: AppTextStyles.footerHeadline,
+            ),
+          ],
         ),
-        const SizedBox(height: 24),
-        _ClaimGiftCardRow(
-          title: giftCardTitle,
-          subtitle: giftCardSubtitle,
-          onTap: onClaimGiftCardPressed,
-        ),
-        const SizedBox(height: 32),
-        Text(
-          footerHeadline,
-          textAlign: TextAlign.center,
-          style: AppTextStyles.footerHeadline,
-        ),
-      ],
+      ),
     );
   }
 }

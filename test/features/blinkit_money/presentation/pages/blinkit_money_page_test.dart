@@ -15,10 +15,11 @@ void main() {
       viewModel.dispose();
     });
 
-    Future<void> pumpPage(WidgetTester tester) {
-      return tester.pumpWidget(
+    Future<void> pumpPage(WidgetTester tester) async {
+      await tester.pumpWidget(
         MaterialApp(home: BlinkitMoneyPage(viewModel: viewModel)),
       );
+      await tester.pumpAndSettle();
     }
 
     testWidgets('renders header brand title', (tester) async {
