@@ -57,7 +57,7 @@ class _ConfettiOverlayState extends State<ConfettiOverlay> {
     
     // Spray from left side (x = 0)
     for (int i = 0; i < 20; i++) {
-      final speed = 400 + rand.nextDouble() * 600;
+      final speed = 600 + rand.nextDouble() * 600;
       // Angle clustered tightly around 45 degrees (40 to 50 degrees)
       final angle = (40 + rand.nextDouble() * 10) * pi / 180;
 
@@ -75,7 +75,7 @@ class _ConfettiOverlayState extends State<ConfettiOverlay> {
 
     // Spray from right side (x = width)
     for (int i = 0; i < 20; i++) {
-      final speed = 400 + rand.nextDouble() * 600;
+      final speed = 600 + rand.nextDouble() * 600;
       // Angle clustered tightly around 45 degrees (40 to 50 degrees)
       final angle = (40 + rand.nextDouble() * 10) * pi / 180;
 
@@ -133,8 +133,8 @@ class _ConfettiPainter extends CustomPainter {
       final startX = p.side == ConfettiSide.left ? 0.0 : size.width;
 
       final currentX = startX + (p.vx * progress);
-      // Gravity pulls vy down exponentially over time
-      final gravity = 800.0 * progress * progress;
+      // Gravity pulls vy down exponentially over time, reduced to ensure upward fountain spray
+      final gravity = 300.0 * progress * progress;
       final currentY = centerY + (p.vy * progress) + gravity;
       
       final opacity = (1.0 - progress).clamp(0.0, 1.0);
