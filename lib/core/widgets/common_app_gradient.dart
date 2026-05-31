@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
 
+import 'package:flicktv_bhuvaneshwaran/core/widgets/dot_pattern_painter.dart';
+
 class CommonAppGradient extends StatelessWidget {
   const CommonAppGradient({super.key, required this.child});
 
@@ -22,7 +24,22 @@ class CommonAppGradient extends StatelessWidget {
           stops: [0.0, 0.4, 1.0],
         ),
       ),
-      child: child,
+      child: Stack(
+        children: [
+          Positioned.fill(
+            child: CustomPaint(
+              painter: const DotPatternPainter(
+                color: Colors.white,
+                dotRadius: 2.0,
+                spacing: 16.0,
+              ),
+            ),
+          ),
+          Positioned.fill(
+            child: child,
+          ),
+        ],
+      ),
     );
   }
 }

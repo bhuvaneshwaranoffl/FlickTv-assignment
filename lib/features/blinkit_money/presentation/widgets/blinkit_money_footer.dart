@@ -31,9 +31,9 @@ class BlinkitMoneyFooter extends StatelessWidget {
       parent: animation,
       curve: AnimationTimings.footerFadeIn,
     );
-    
+
     final slideAnimation = Tween<Offset>(
-      begin: const Offset(0.0, 0.5), 
+      begin: const Offset(0.0, 0.5),
       end: Offset.zero,
     ).animate(footerAnimation);
 
