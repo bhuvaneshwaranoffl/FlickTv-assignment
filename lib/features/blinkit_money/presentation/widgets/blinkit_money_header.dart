@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
-import 'circle_icon_button.dart';
+import 'package:flicktv_bhuvaneshwaran/core/theme/app_text_styles.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/widgets/circle_icon_button.dart';
 
 /// Top section: navigation, wallet illustration, and brand title.
 class BlinkitMoneyHeader extends StatelessWidget {

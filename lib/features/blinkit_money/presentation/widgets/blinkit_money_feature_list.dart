@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/models/feature_card_model.dart';
-import 'feature_card_item.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/domain/models/feature_card_model.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/widgets/feature_card_item.dart';
 
 /// Scrollable list of Blinkit Money feature cards.
 class BlinkitMoneyFeatureList extends StatelessWidget {

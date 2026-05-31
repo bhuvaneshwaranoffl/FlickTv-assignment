@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../domain/models/feature_card_model.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/domain/models/feature_card_model.dart';
 
 /// Provides static content for the Blinkit Money onboarding screen.
 abstract final class BlinkitMoneyRepository {

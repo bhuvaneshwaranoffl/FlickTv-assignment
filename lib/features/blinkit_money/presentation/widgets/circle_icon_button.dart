@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_colors.dart';
+import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
 
 /// Circular icon button used in the Blinkit Money app bar.
 class CircleIconButton extends StatelessWidget {

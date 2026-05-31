@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme/app_colors.dart';
+import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
 
 class CommonAppGradient extends StatelessWidget {
   const CommonAppGradient({super.key, required this.child});

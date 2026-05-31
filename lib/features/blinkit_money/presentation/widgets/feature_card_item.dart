@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
-import '../../domain/models/feature_card_model.dart';
+import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
+import 'package:flicktv_bhuvaneshwaran/core/theme/app_text_styles.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/domain/models/feature_card_model.dart';
 
 /// Single feature card shown in the Blinkit Money feature list.
 class FeatureCardItem extends StatelessWidget {

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/widgets/common_app_gradient.dart';
-import '../viewmodels/blinkit_money_view_model.dart';
-import '../widgets/blinkit_money_feature_list.dart';
-import '../widgets/blinkit_money_footer.dart';
-import '../widgets/blinkit_money_header.dart';
+import 'package:flicktv_bhuvaneshwaran/core/widgets/common_app_gradient.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/viewmodels/blinkit_money_view_model.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/widgets/blinkit_money_feature_list.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/widgets/blinkit_money_footer.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/widgets/blinkit_money_header.dart';
 
 /// Blinkit Money onboarding screen composed of header, cards, and footer.
 class BlinkitMoneyPage extends StatefulWidget {

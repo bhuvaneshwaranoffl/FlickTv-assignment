@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_colors.dart';
+import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
 
 /// Typography tokens backed by the bundled Inter font family.
 abstract final class AppTextStyles {

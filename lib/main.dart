@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'core/theme/app_colors.dart';
-import 'features/blinkit_money/presentation/pages/blinkit_money_page.dart';
+import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/pages/blinkit_money_page.dart';
 
 void main() {
   runApp(const BhuvaneshwaranApp());

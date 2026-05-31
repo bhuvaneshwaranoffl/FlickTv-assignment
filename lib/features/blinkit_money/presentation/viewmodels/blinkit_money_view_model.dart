@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 
-import '../../data/repositories/blinkit_money_repository.dart';
-import '../../domain/models/feature_card_model.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/data/repositories/blinkit_money_repository.dart';
+import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/domain/models/feature_card_model.dart';
 
 /// ViewModel for [BlinkitMoneyPage].
 ///
