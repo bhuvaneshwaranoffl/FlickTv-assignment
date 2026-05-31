@@ -23,29 +23,34 @@ class BlinkitMoneyHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.headerBackground,
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: SafeArea(
+        bottom: false,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+          child: Column(
             children: [
-              CircleIconButton(
-                icon: Icons.arrow_back,
-                onPressed: onBackPressed,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CircleIconButton(
+                    icon: Icons.arrow_back,
+                    onPressed: onBackPressed,
+                  ),
+                  CircleIconButton(
+                    icon: Icons.settings_outlined,
+                    onPressed: onSettingsPressed,
+                  ),
+                ],
               ),
-              CircleIconButton(
-                icon: Icons.settings_outlined,
-                onPressed: onSettingsPressed,
-              ),
+              const SizedBox(height: 24),
+              _WalletIllustration(),
+              const SizedBox(height: 16),
+              Text(brandLabel, style: AppTextStyles.brandLabel),
+              Text(brandTitle, style: AppTextStyles.brandTitle),
+              const SizedBox(height: 32),
             ],
           ),
-          const SizedBox(height: 24),
-          _WalletIllustration(),
-          const SizedBox(height: 16),
-          Text(brandLabel, style: AppTextStyles.brandLabel),
-          Text(brandTitle, style: AppTextStyles.brandTitle),
-          const SizedBox(height: 32),
-        ],
+        ),
       ),
     );
   }
