@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/widgets/common_app_gradient.dart';
 import '../viewmodels/blinkit_money_view_model.dart';
 import '../widgets/blinkit_money_feature_list.dart';
 import '../widgets/blinkit_money_footer.dart';
@@ -38,38 +39,42 @@ class _BlinkitMoneyPageState extends State<BlinkitMoneyPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: ListenableBuilder(
-        listenable: _viewModel,
-        builder: (context, _) {
-          return Column(
-            children: [
-              // Header: app bar actions, wallet image, and brand typography.
-              BlinkitMoneyHeader(
-                brandLabel: _viewModel.brandLabel,
-                brandTitle: _viewModel.brandTitle,
-                onBackPressed: _viewModel.onBackPressed,
-                onSettingsPressed: _viewModel.onSettingsPressed,
-              ),
+    return CommonAppGradient(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: ListenableBuilder(
+          listenable: _viewModel,
+          builder: (context, _) {
+            return Column(
+              children: [
+                // Header: app bar actions, wallet image, and brand typography.
+                BlinkitMoneyHeader(
+                  brandLabel: _viewModel.brandLabel,
+                  brandTitle: _viewModel.brandTitle,
+                  onBackPressed: _viewModel.onBackPressed,
+                  onSettingsPressed: _viewModel.onSettingsPressed,
+                ),
 
-              // Feature cards list.
-              Expanded(
-                child: BlinkitMoneyFeatureList(cards: _viewModel.featureCards),
-              ),
+                // Feature cards list.
+                Expanded(
+                  child: BlinkitMoneyFeatureList(
+                    cards: _viewModel.featureCards,
+                  ),
+                ),
 
-              // Footer: CTA buttons and decorative headline.
-              BlinkitMoneyFooter(
-                addMoneyLabel: _viewModel.addMoneyLabel,
-                giftCardTitle: _viewModel.giftCardTitle,
-                giftCardSubtitle: _viewModel.giftCardSubtitle,
-                footerHeadline: _viewModel.footerHeadline,
-                onAddMoneyPressed: _viewModel.onAddMoneyPressed,
-                onClaimGiftCardPressed: _viewModel.onClaimGiftCardPressed,
-              ),
-            ],
-          );
-        },
+                // Footer: CTA buttons and decorative headline.
+                BlinkitMoneyFooter(
+                  addMoneyLabel: _viewModel.addMoneyLabel,
+                  giftCardTitle: _viewModel.giftCardTitle,
+                  giftCardSubtitle: _viewModel.giftCardSubtitle,
+                  footerHeadline: _viewModel.footerHeadline,
+                  onAddMoneyPressed: _viewModel.onAddMoneyPressed,
+                  onClaimGiftCardPressed: _viewModel.onClaimGiftCardPressed,
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

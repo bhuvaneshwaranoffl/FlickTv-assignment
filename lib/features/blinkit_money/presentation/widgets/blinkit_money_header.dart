@@ -21,11 +21,9 @@ class BlinkitMoneyHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.headerBackground,
-      child: SafeArea(
-        bottom: false,
-        child: Padding(
+    return SafeArea(
+      bottom: false,
+      child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
           child: Column(
             children: [
@@ -51,8 +49,7 @@ class BlinkitMoneyHeader extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
