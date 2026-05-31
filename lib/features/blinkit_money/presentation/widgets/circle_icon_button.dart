@@ -1,8 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-import 'package:flicktv_bhuvaneshwaran/core/theme/app_colors.dart';
-
 /// Circular icon button with a glassmorphism (blur mirror) effect.
 class CircleIconButton extends StatelessWidget {
   const CircleIconButton({
@@ -20,7 +18,7 @@ class CircleIconButton extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 12.0, sigmaY: 12.0),
         child: Material(
-          color: const Color(0xFFECECEC).withOpacity(0.15),
+          color: const Color(0xFFECECEC).withValues(alpha: 0.15),
           shape: const CircleBorder(),
           child: InkWell(
             onTap: onPressed,
