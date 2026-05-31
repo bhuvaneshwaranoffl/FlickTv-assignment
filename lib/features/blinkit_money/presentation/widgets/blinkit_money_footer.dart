@@ -24,40 +24,37 @@ class BlinkitMoneyFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            width: double.infinity,
-            height: 52,
-            child: ElevatedButton(
-              onPressed: onAddMoneyPressed,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryGreen,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          width: double.infinity,
+          height: 52,
+          child: ElevatedButton(
+            onPressed: onAddMoneyPressed,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: AppColors.primaryGreen,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
               ),
-              child: Text(addMoneyLabel, style: AppTextStyles.primaryButton),
             ),
+            child: Text(addMoneyLabel, style: AppTextStyles.primaryButton),
           ),
-          const SizedBox(height: 12),
-          _ClaimGiftCardRow(
-            title: giftCardTitle,
-            subtitle: giftCardSubtitle,
-            onTap: onClaimGiftCardPressed,
-          ),
-          const SizedBox(height: 32),
-          Text(
-            footerHeadline,
-            textAlign: TextAlign.center,
-            style: AppTextStyles.footerHeadline,
-          ),
-        ],
-      ),
+        ),
+        const SizedBox(height: 24),
+        _ClaimGiftCardRow(
+          title: giftCardTitle,
+          subtitle: giftCardSubtitle,
+          onTap: onClaimGiftCardPressed,
+        ),
+        const SizedBox(height: 32),
+        Text(
+          footerHeadline,
+          textAlign: TextAlign.center,
+          style: AppTextStyles.footerHeadline,
+        ),
+      ],
     );
   }
 }
@@ -109,10 +106,7 @@ class _ClaimGiftCardRow extends StatelessWidget {
                   ],
                 ),
               ),
-              const Icon(
-                Icons.chevron_right,
-                color: AppColors.arrowColor,
-              ),
+              const Icon(Icons.chevron_right, color: AppColors.arrowColor),
             ],
           ),
         ),

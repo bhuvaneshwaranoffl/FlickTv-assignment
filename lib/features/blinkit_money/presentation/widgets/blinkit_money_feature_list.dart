@@ -14,7 +14,7 @@ class BlinkitMoneyFeatureList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 12),
+      padding: EdgeInsets.zero,
       itemCount: cards.length,
       separatorBuilder: (context, index) => const SizedBox(height: 12),
       itemBuilder: (context, index) {
