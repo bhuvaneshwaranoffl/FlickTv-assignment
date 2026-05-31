@@ -24,7 +24,8 @@ class BlinkitMoneyHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageFade = CurvedAnimation(parent: animation, curve: AnimationTimings.walletImageFadeIn);
-    final textFade = CurvedAnimation(parent: animation, curve: AnimationTimings.brandTextFadeIn);
+    final titleFade = CurvedAnimation(parent: animation, curve: AnimationTimings.titleFadeIn);
+    final subtitleFade = CurvedAnimation(parent: animation, curve: AnimationTimings.subtitleFadeIn);
     final buttonsFade = CurvedAnimation(parent: animation, curve: AnimationTimings.headerButtonsFadeIn);
 
     return SafeArea(
@@ -50,8 +51,8 @@ class BlinkitMoneyHeader extends StatelessWidget {
           const SizedBox(height: 24),
           FadeTransition(opacity: imageFade, child: _WalletIllustration()),
           const SizedBox(height: 16),
-          FadeTransition(opacity: textFade, child: Text(brandLabel, style: AppTextStyles.brandLabel)),
-          FadeTransition(opacity: textFade, child: Text(brandTitle, style: AppTextStyles.brandTitle)),
+          FadeTransition(opacity: titleFade, child: Text(brandLabel, style: AppTextStyles.brandLabel)),
+          FadeTransition(opacity: subtitleFade, child: Text(brandTitle, style: AppTextStyles.brandTitle)),
           const SizedBox(height: 32),
         ],
       ),

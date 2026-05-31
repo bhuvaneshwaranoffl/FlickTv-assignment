@@ -60,12 +60,28 @@ class _BlinkitMoneyPageState extends State<BlinkitMoneyPage> with SingleTickerPr
                   child: AnimatedBuilder(
                     animation: _animationController,
                     builder: (context, child) {
-                      final slideUpAnimation = Tween<double>(begin: 1.0, end: 0.0).animate(
-                        CurvedAnimation(
-                          parent: _animationController,
-                          curve: AnimationTimings.headerSlideUp,
+                      final slideUpAnimation = TweenSequence<double>([
+                        TweenSequenceItem(
+                          tween: ConstantTween<double>(1.0),
+                          weight: 25, // 0.00 to 0.25 (Wait for image and confetti)
                         ),
-                      );
+                        TweenSequenceItem(
+                          tween: Tween<double>(begin: 1.0, end: 0.8).chain(CurveTween(curve: Curves.easeInOut)),
+                          weight: 10, // 0.25 to 0.35 (Shift up slightly to make room for title)
+                        ),
+                        TweenSequenceItem(
+                          tween: ConstantTween<double>(0.8),
+                          weight: 25, // 0.35 to 0.60 (Wait for title and subtitle to fade in)
+                        ),
+                        TweenSequenceItem(
+                          tween: Tween<double>(begin: 0.8, end: 0.0).chain(CurveTween(curve: Curves.easeInOutCubic)),
+                          weight: 15, // 0.60 to 0.75 (Slide all the way up together)
+                        ),
+                        TweenSequenceItem(
+                          tween: ConstantTween<double>(0.0),
+                          weight: 25, // 0.75 to 1.00 (Stay at top)
+                        ),
+                      ]).animate(_animationController);
 
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
