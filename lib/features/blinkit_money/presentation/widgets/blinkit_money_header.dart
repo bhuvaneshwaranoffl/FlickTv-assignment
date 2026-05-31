@@ -21,8 +21,9 @@ class BlinkitMoneyHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+    return Container(
+      color: AppColors.headerBackground,
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
       child: Column(
         children: [
           Row(
@@ -54,30 +55,13 @@ class BlinkitMoneyHeader extends StatelessWidget {
 class _WalletIllustration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 96,
-      height: 96,
-      decoration: BoxDecoration(
-        color: AppColors.blinkitYellow,
-        borderRadius: BorderRadius.circular(24),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.blinkitYellow.withValues(alpha: 0.35),
-            blurRadius: 24,
-            offset: const Offset(0, 8),
-          ),
-        ],
-      ),
-      child: const Center(
-        child: Text(
-          '₹',
-          style: TextStyle(
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w800,
-            fontSize: 40,
-            color: Colors.white,
-          ),
-        ),
+    return Center(
+      child: Image.asset(
+        'assets/images/wallet_icon.png',
+        width: 135,
+        height: 123,
+        fit: BoxFit.contain,
+        semanticLabel: 'Wallet icon',
       ),
     );
   }

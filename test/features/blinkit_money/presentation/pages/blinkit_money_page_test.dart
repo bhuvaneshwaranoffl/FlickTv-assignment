@@ -34,6 +34,12 @@ void main() {
       await pumpPage(tester);
 
       expect(find.text('Single tap payments'), findsOneWidget);
+
+      await tester.scrollUntilVisible(
+        find.text('Zero failures'),
+        120,
+        scrollable: find.byType(Scrollable).first,
+      );
       expect(find.text('Zero failures'), findsOneWidget);
 
       await tester.scrollUntilVisible(

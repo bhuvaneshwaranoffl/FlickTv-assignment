@@ -61,6 +61,6 @@ abstract final class AppTextStyles {
     fontFamily: _fontFamily,
     fontWeight: FontWeight.w800,
     fontSize: 28,
-    color: AppColors.footerText,
+    color: AppColors.footerTextColor,
   );
 }

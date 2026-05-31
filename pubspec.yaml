@@ -20,6 +20,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  assets:
+    - assets/images/wallet_icon.png
+
   fonts:
     - family: Inter
       fonts:

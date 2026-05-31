@@ -86,7 +86,7 @@ class _ClaimGiftCardRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: AppColors.card,
+      color: AppColors.giftCardBackground,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: onTap,
@@ -121,7 +121,7 @@ class _ClaimGiftCardRow extends StatelessWidget {
               ),
               const Icon(
                 Icons.chevron_right,
-                color: AppColors.textSecondary,
+                color: AppColors.arrowColor,
               ),
             ],
           ),
