@@ -17,9 +17,7 @@ void main() {
 
     Future<void> pumpPage(WidgetTester tester) {
       return tester.pumpWidget(
-        MaterialApp(
-          home: BlinkitMoneyPage(viewModel: viewModel),
-        ),
+        MaterialApp(home: BlinkitMoneyPage(viewModel: viewModel)),
       );
     }
 
@@ -61,7 +59,9 @@ void main() {
     testWidgets('Add Money tap delegates to view model', (tester) async {
       await pumpPage(tester);
 
-      await tester.tap(find.text('Add Money'));
+      final addMoneyButton = find.text('Add Money');
+      await tester.ensureVisible(addMoneyButton);
+      await tester.tap(addMoneyButton);
       await tester.pump();
 
       expect(viewModel.addMoneyTapped, isTrue);
@@ -70,7 +70,9 @@ void main() {
     testWidgets('Claim Gift Card tap delegates to view model', (tester) async {
       await pumpPage(tester);
 
-      await tester.tap(find.text('Claim Gift Card'));
+      final giftCardButton = find.text('Claim Gift Card');
+      await tester.ensureVisible(giftCardButton);
+      await tester.tap(giftCardButton);
       await tester.pump();
 
       expect(viewModel.giftCardTapped, isTrue);

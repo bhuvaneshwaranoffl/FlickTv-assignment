@@ -5,17 +5,16 @@ import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/presentation/widge
 
 /// Scrollable list of Blinkit Money feature cards.
 class BlinkitMoneyFeatureList extends StatelessWidget {
-  const BlinkitMoneyFeatureList({
-    super.key,
-    required this.cards,
-  });
+  const BlinkitMoneyFeatureList({super.key, required this.cards});
 
   final List<FeatureCardModel> cards;
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
       itemCount: cards.length,
       separatorBuilder: (context, index) => const SizedBox(height: 12),
       itemBuilder: (context, index) {

@@ -44,33 +44,32 @@ class _BlinkitMoneyPageState extends State<BlinkitMoneyPage> {
         body: ListenableBuilder(
           listenable: _viewModel,
           builder: (context, _) {
-            return Column(
-              children: [
-                // Header: app bar actions, wallet image, and brand typography.
-                BlinkitMoneyHeader(
-                  brandLabel: _viewModel.brandLabel,
-                  brandTitle: _viewModel.brandTitle,
-                  onBackPressed: _viewModel.onBackPressed,
-                  onSettingsPressed: _viewModel.onSettingsPressed,
-                ),
-
-                // Feature cards list.
-                Expanded(
-                  child: BlinkitMoneyFeatureList(
-                    cards: _viewModel.featureCards,
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  // Header: app bar actions, wallet image, and brand typography.
+                  BlinkitMoneyHeader(
+                    brandLabel: _viewModel.brandLabel,
+                    brandTitle: _viewModel.brandTitle,
+                    onBackPressed: _viewModel.onBackPressed,
+                    onSettingsPressed: _viewModel.onSettingsPressed,
                   ),
-                ),
 
-                // Footer: CTA buttons and decorative headline.
-                BlinkitMoneyFooter(
-                  addMoneyLabel: _viewModel.addMoneyLabel,
-                  giftCardTitle: _viewModel.giftCardTitle,
-                  giftCardSubtitle: _viewModel.giftCardSubtitle,
-                  footerHeadline: _viewModel.footerHeadline,
-                  onAddMoneyPressed: _viewModel.onAddMoneyPressed,
-                  onClaimGiftCardPressed: _viewModel.onClaimGiftCardPressed,
-                ),
-              ],
+                  // Feature cards list.
+                  BlinkitMoneyFeatureList(cards: _viewModel.featureCards),
+                  const SizedBox(height: 24),
+
+                  // Footer: CTA buttons and decorative headline.
+                  BlinkitMoneyFooter(
+                    addMoneyLabel: _viewModel.addMoneyLabel,
+                    giftCardTitle: _viewModel.giftCardTitle,
+                    giftCardSubtitle: _viewModel.giftCardSubtitle,
+                    footerHeadline: _viewModel.footerHeadline,
+                    onAddMoneyPressed: _viewModel.onAddMoneyPressed,
+                    onClaimGiftCardPressed: _viewModel.onClaimGiftCardPressed,
+                  ),
+                ],
+              ),
             );
           },
         ),

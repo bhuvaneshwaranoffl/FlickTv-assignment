@@ -6,17 +6,14 @@ import 'package:flicktv_bhuvaneshwaran/features/blinkit_money/domain/models/feat
 
 /// Single feature card shown in the Blinkit Money feature list.
 class FeatureCardItem extends StatelessWidget {
-  const FeatureCardItem({
-    super.key,
-    required this.model,
-  });
+  const FeatureCardItem({super.key, required this.model});
 
   final FeatureCardModel model;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 12),
       decoration: BoxDecoration(
         color: AppColors.card,
         borderRadius: BorderRadius.circular(16),
@@ -31,7 +28,7 @@ class FeatureCardItem extends StatelessWidget {
               color: AppColors.iconBackground,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Icon(model.icon, color: AppColors.textSecondary),
+            child: Icon(model.icon, color: AppColors.iconYellow),
           ),
           const SizedBox(width: 14),
           Expanded(

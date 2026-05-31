@@ -10,6 +10,7 @@ abstract final class AppColors {
   static const iconBackground = Color(0xFF2C2C2E);
   static const primaryGreen = Color(0xFF0C831F);
   static const blinkitYellow = Color(0xFFF8CB46);
+  static const iconYellow = Color(0xFFF3C23B);
   static const textPrimary = Color(0xFFFFFFFF);
   static const textSecondary = Color(0xFFAAAAAA);
   static const footerText = Color(0xFF3A3A3C);

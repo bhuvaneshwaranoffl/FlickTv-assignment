@@ -17,8 +17,9 @@ class CommonAppGradient extends StatelessWidget {
           colors: [
             AppColors.headerBackground,
             AppColors.background,
+            AppColors.background,
           ],
-          stops: [0.0, 0.4],
+          stops: [0.0, 0.4, 1.0],
         ),
       ),
       child: child,

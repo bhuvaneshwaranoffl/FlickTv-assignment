@@ -24,50 +24,40 @@ class BlinkitMoneyFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      clipBehavior: Clip.none,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton(
-                  onPressed: onAddMoneyPressed,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryGreen,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: Text(addMoneyLabel, style: AppTextStyles.primaryButton),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            width: double.infinity,
+            height: 52,
+            child: ElevatedButton(
+              onPressed: onAddMoneyPressed,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.primaryGreen,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
               ),
-              const SizedBox(height: 12),
-              _ClaimGiftCardRow(
-                title: giftCardTitle,
-                subtitle: giftCardSubtitle,
-                onTap: onClaimGiftCardPressed,
-              ),
-              const SizedBox(height: 56),
-            ],
+              child: Text(addMoneyLabel, style: AppTextStyles.primaryButton),
+            ),
           ),
-        ),
-        Positioned(
-          left: 0,
-          right: 0,
-          bottom: -8,
-          child: Text(
+          const SizedBox(height: 12),
+          _ClaimGiftCardRow(
+            title: giftCardTitle,
+            subtitle: giftCardSubtitle,
+            onTap: onClaimGiftCardPressed,
+          ),
+          const SizedBox(height: 32),
+          Text(
             footerHeadline,
             textAlign: TextAlign.center,
             style: AppTextStyles.footerHeadline,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
